@@ -12,6 +12,29 @@
 - 데이터 하향식 분석을 통한 효율적인 가설 검증
 - 필터링 된 가설을 토대로 다중 회귀분석 모델 분석
 
+## 📌 주요 수행 내용
+
+### 1. 데이터 전처리 및 정제
+- **데이터 주기 동일화**: 차량 IOT 데이터와 운전자 앱 데이터의 시간 주기를 일치시켜 분석 가능한 형태로 병합.
+- **이상치 제거**: Z-Score 방식을 도입하여 주행 데이터 내의 비정상적인 수치를 제거하고 데이터의 신뢰성을 확보.
+
+### 2. 변수 분석 및 가설 검증
+- **가중치 분석**: 거리, 온도(내부/외부), 시간, 신호등 정지 횟수, 기압 등 다양한 변수가 배터리 소모량에 미치는 가중치를 계산하여 변수 필터링 수행.
+- **하향식 분석**: 설정된 가설(예: 외기 온도가 낮을수록 배터리 소모가 빠르다 등)을 데이터를 통해 검증.
+
+### 3. 예측 모델링
+- **단순/다중 선형 회귀**: 특정 변수(온도, 거리 등)와 배터리 소모량 간의 선형적 관계 분석.
+- **LSTM (Deep Learning)**: 시간 흐름에 따른 배터리 소모 패턴을 학습하기 위해 LSTM 모델을 적용하여 예측 정확도 향상 시도.
+- **손실 함수 최적화**: Adam Optimizer 등을 활용하여 모델의 MSE(Mean Squared Error)를 최소화.
+
+## 🛠 기술 스택
+- **Language**: Python 3.8
+- **Library**: 
+  - Data Analysis: `pandas`, `numpy`, `scipy`
+  - Machine Learning: `scikit-learn` (LinearRegression, Lasso, MinMaxScaler)
+  - Deep Learning: `tensorflow`, `keras` (LSTM, Dense layers)
+  - Visualization: `matplotlib`, `seaborn`
+
 
 ## 👤멤버
 - 주식회사 꾼
